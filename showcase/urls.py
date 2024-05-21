@@ -5,6 +5,6 @@ from .views import ProjectsListView, HomePageView, ProjectDetailView, ContactFor
 urlpatterns = [
     path("", HomePageView.as_view(), name="home"),
     path("projects/", ProjectsListView.as_view(), name="projects"),
-    path("projects/<int:pk>/", ProjectDetailView.as_view(), name="project_detail"),
+    path("project/<int:pk>/", ProjectDetailView.as_view(), name="project_detail"),
     path("contact/", ContactFormView.as_view(), name="contact"),
 ]
