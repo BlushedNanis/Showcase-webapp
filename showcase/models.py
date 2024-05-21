@@ -23,9 +23,9 @@ class ProjectsData(models.Model):
     
 class ProfileData(models.Model):
     name = models.CharField(max_length=200)
-    description = models.CharField(max_length=3000)
-    extra1 = models.CharField(max_length=2000)
-    extra2 = models.CharField(max_length=2000)
+    description = models.TextField()
+    extra1 = models.TextField()
+    extra2 = models.TextField()
     image = models.ImageField(upload_to="showcase\\static\\profile\\")
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
