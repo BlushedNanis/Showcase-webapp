@@ -45,3 +45,26 @@ class ProfileData(models.Model):
     
     def __str__(self) -> str:
         return self.name
+    
+    
+class ContactForm(models.Model):
+    SUBJECT_CHOICES = [
+        ('career_opportunity', 'Career Opportunity'),
+        ('collaboration_interest', 'Collaboration Interest'),
+        ('technical_inquiry', 'Technical Inquiry'),
+        ('general_comment', 'General Comment'),
+        ('feedback', 'Feedback'),
+        ('suggestions', 'Suggestions'),
+        ('other', 'Other'),
+    ]
+    name = models.CharField(max_length=200)
+    email = models.EmailField()
+    subject = models.CharField(max_length=100, choices=SUBJECT_CHOICES)
+    message = models.TextField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+    email_sent = models.BooleanField(default=False)
+    email_received = models.BooleanField(default=False)
+    
+    def __str__(self) -> str:
+        return f"{self.subject} from {self.name}"
+    
