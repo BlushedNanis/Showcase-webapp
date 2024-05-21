@@ -15,9 +15,8 @@ class HomePageView(TemplateView):
 
 
 class ProjectsListView(ListView):
-    model = ProjectsData
+    queryset = ProjectsData.objects.order_by("-updated_date")
     template_name = "projects_list.html"
-    context_object_name = "projects"
     
     
 class ProjectDetailView(DetailView):
