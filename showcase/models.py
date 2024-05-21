@@ -3,7 +3,7 @@ from django.db import models
 
 class ProjectsData(models.Model):
     title = models.CharField(max_length=200)
-    description = models.CharField(max_length=2000)
+    description = models.TextField()
     link = models.URLField(max_length=200)
     image = models.ImageField(upload_to="showcase\\static\\images\\")
     created_date = models.DateTimeField(auto_now_add=True)
