@@ -19,3 +19,29 @@ class ProjectsData(models.Model):
     
     def __str__(self) -> str:
         return self.title
+    
+    
+class ProfileData(models.Model):
+    name = models.CharField(max_length=200)
+    description = models.CharField(max_length=3000)
+    extra1 = models.CharField(max_length=2000)
+    extra2 = models.CharField(max_length=2000)
+    image = models.ImageField(upload_to="showcase\\static\\profile\\")
+    created_date = models.DateTimeField(auto_now_add=True)
+    updated_date = models.DateTimeField(auto_now=True)
+    
+    def img_static_path(self):
+        return self.image[23:]
+    
+    def split_extra1_by_slash(self):
+        splitted_extra = self.extra1.split("/")
+        cleaned_extra = [item.strip() for item in splitted_extra]
+        return cleaned_extra
+    
+    def split_extra2_by_slash(self):
+        splitted_extra = self.extra2.split("/")
+        cleaned_extra = [item.strip() for item in splitted_extra]
+        return cleaned_extra
+    
+    def __str__(self) -> str:
+        return self.name
