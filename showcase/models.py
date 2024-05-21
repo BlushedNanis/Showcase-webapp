@@ -24,6 +24,7 @@ class ProjectsData(models.Model):
 class ProfileData(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
+    title = models.CharField(max_length=200)
     extra1 = models.TextField(null=True, blank=True)
     extra2 = models.TextField(null=True, blank=True)
     image = models.ImageField(upload_to="showcase\\static\\profile\\")
