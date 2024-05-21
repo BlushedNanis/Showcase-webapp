@@ -10,7 +10,7 @@ class ProjectsData(models.Model):
     updated_date = models.DateTimeField(auto_now=True)
     
     def short_description(self):
-        first_words = self.description.split()[:10]
+        first_words = self.description.split()[:20]
         short_description = " ".join(first_words)
         return short_description
     
