@@ -10,8 +10,8 @@ class ProjectsData(models.Model):
     updated_date = models.DateTimeField(auto_now=True)
     
     def short_description(self):
-        first_words = self.description.split()[:20]
-        short_description = " ".join(first_words)
+        first_words = self.description.split()[:18]
+        short_description = " ".join(first_words) + "..."
         return short_description
     
     def img_static_path(self):
