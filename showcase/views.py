@@ -22,6 +22,7 @@ class ProjectsListView(ListView):
 class ProjectDetailView(DetailView):
     model = ProjectsData
     template_name = "project_detail.html"
+    context_object_name = "project"
     
     
 class ContactFormView(FormView):
