@@ -15,7 +15,7 @@ class ProjectsData(models.Model):
         return short_description
     
     def img_static_path(self):
-        return self.image.url[23:]
+        return self.image.url[16:]
     
     def __str__(self) -> str:
         return self.title
@@ -31,7 +31,7 @@ class ProfileData(models.Model):
     updated_date = models.DateTimeField(auto_now=True)
     
     def img_static_path(self):
-        return self.image.url[23:]
+        return self.image.url[16:]
     
     def split_extra1_by_slash(self):
         splitted_extra = self.extra1.split("/")
