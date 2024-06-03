@@ -72,7 +72,25 @@ Fields:
 
 ## Screenshots
 
-* Home page:
-* Projects page:
-* Contact form page:
-* Django admin:
+
+Home page:
+
+![1717440862912](image/README/1717440862912.png)
+
+
+Projects page:
+
+![1717440889470](image/README/1717440889470.png)
+
+
+Contact form page:
+
+![1717440910456](image/README/1717440910456.png)
+
+
+![1717440930483](image/README/1717440930483.png)
+
+
+Django admin:
+
+![1717440996008](image/README/1717440996008.png)
