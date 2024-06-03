@@ -14,7 +14,7 @@
             <div class="col-md-4 mb-4">
                 <div class="card h-100 shadow-sm"style="background-color: rgba(255, 255, 255, 0.3); border: 1px solid rgba(0, 0, 0, 0.1);">
                     <a href="{% url 'project_detail' project.pk %}">
-                        <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}" style="height: 350px; object-fit: cover;">
+                        <img src="{% static project.img_static_path %}" class="card-img-top" alt="{{ project.title }}" style="height: 350px; object-fit: cover;">
                     </a>
                     <div class="card-body">
                         <h5 class="card-title">{{ project.title }}</h5>
