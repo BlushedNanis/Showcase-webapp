@@ -7,18 +7,18 @@
         {% with forloop.counter|add:"-1" as index %}
             {% if index|divisibleby:3 %}
                 {% if not forloop.first %}
-                    </div> <!-- Close the previous row only if it's not the first project -->
+                    </div> 
                 {% endif %}
-                <div class="row g-4"> <!-- Start a new row with gutter -->
+                <div class="row g-4">
             {% endif %}
             <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm"style="background-color: rgba(255, 255, 255, 0.3); border: 1px solid rgba(0, 0, 0, 0.1);"> <!-- Bootstrap card with shadow and full height -->
+                <div class="card h-100 shadow-sm"style="background-color: rgba(255, 255, 255, 0.3); border: 1px solid rgba(0, 0, 0, 0.1);">
                     <a href="{% url 'project_detail' project.pk %}">
-                        <img src="{% static project.img_static_path %}" class="card-img-top" alt="{{ project.title }}">
+                        <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}" style="height: 350px; object-fit: cover;">
                     </a>
                     <div class="card-body">
                         <h5 class="card-title">{{ project.title }}</h5>
-                        <p class="card-text">{{ project.short_description }}</p>
+                        <p class="card-text" style="height: 100px; overflow: hidden;">{{ project.short_description }}</p>
                         <a href="{{ project.link }}" class="btn btn-outline-secondary d-block mx-auto">
                             <i class="bi bi-github"></i>
                         </a>
@@ -26,7 +26,7 @@
                 </div>
             </div>
             {% if forloop.last %}
-                </div> <!-- Close the last row -->
+                </div>
             {% endif %}
         {% endwith %}
     {% endfor %}
